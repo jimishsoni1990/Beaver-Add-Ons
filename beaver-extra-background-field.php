@@ -3,7 +3,7 @@
  *	medium and small devices
  *
  */
-function perkier_register_settings_form( $form, $id ) {
+function bb_register_settings_form( $form, $id ) {
   
   if ( 'row' == $id ) {
   	$form['tabs']['style']['sections']['bg_photo']['fields']['bg_photo_medium'] = array(
@@ -90,15 +90,15 @@ function perkier_register_settings_form( $form, $id ) {
   
   return $form;
 }
-add_filter( 'fl_builder_register_settings_form', 'perkier_register_settings_form', 10, 2 );
+add_filter( 'fl_builder_register_settings_form', 'bb_register_settings_form', 10, 2 );
 
 /*
  *	Add CSS for Extra Background fields for 
  *	medium and small devices
  *
  */
-add_filter( 'fl_builder_render_css', 'perkier_filter_row_css',1000, 3 );
-function perkier_filter_row_css( $css, $nodes, $global_settings )
+add_filter( 'fl_builder_render_css', 'bb_filter_row_css',1000, 3 );
+function bb_filter_row_css( $css, $nodes, $global_settings )
 {
     foreach( $nodes['rows'] as $row )
     {
